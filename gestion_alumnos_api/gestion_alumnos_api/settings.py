@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-wc+@vip&#07qv8@b&0+qbj8t!bii%1+g65so8zkpbar4yzos0%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', "192.168.1.7"]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', "192.168.1.7", "192.168.56.1", "10.1.116.171"]
 
 
 # Application definition
@@ -85,6 +85,14 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset': 'utf8mb4',
+        },
+        'TEST': {
+            'CHARSET': 'utf8mb4',
+            'COLLATION': 'utf8mb4_unicode_ci',
+        }
     }
 }
 
@@ -133,6 +141,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Configuración CORS
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://192.168.56.1:3000",
+    "http://192.168.1.7:3000",
+    "http://10.1.116.171:3000",
 ]
 
 # Configuración REST Framework
