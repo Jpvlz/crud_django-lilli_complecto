@@ -43,7 +43,7 @@ const EditarAlumno = () => {
             setError(null); // Reinicia el estado de error
             try {
                 // Realiza una solicitud GET para obtener los datos del alumno
-                const response = await axios.get(`http://127.0.0.1:8000/api/alumnos/${id}/`);
+                const response = await axios.get(`http://10.1.116.171:8000/api/alumnos/${id}/`);
                 setAlumno(response.data); // Actualiza el estado con los datos del alumno
             } catch (err) {
                 // Maneja errores al cargar los datos
@@ -70,7 +70,7 @@ const EditarAlumno = () => {
         e.preventDefault(); // Previene el comportamiento por defecto del formulario
         try {
             // Realiza una solicitud PUT para actualizar los datos del alumno
-            await axios.put(`http://127.0.0.1:8000/api/alumnos/${id}/`, alumno);
+            await axios.put(`http://10.1.116.171:8000/api/alumnos/${id}/`, alumno);
             // Muestra una alerta de éxito
             setShowAlert({ variant: 'success', message: 'Alumno actualizado exitosamente!' });
             // Redirige al usuario a la lista de alumnos después de 1.5 segundos

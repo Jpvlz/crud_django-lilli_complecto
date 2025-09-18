@@ -44,7 +44,7 @@ const GestionAlumnos = () => {
         setError(null); // Reinicia el estado de error
         try {
             // Realiza una solicitud GET para obtener los alumnos
-            const response = await axios.get('http://127.0.0.1:8000/api/alumnos/');
+            const response = await axios.get('http://10.1.116.171:8000/api/alumnos/');
             setAlumnos(response.data); // Actualiza el estado con los datos obtenidos
         } catch (err) {
             // Maneja errores al cargar los datos
@@ -75,7 +75,7 @@ const GestionAlumnos = () => {
         setIsDeleting(true);
         try {
             // Realiza una solicitud DELETE para eliminar el alumno
-            await axios.delete(`http://127.0.0.1:8000/api/alumnos/${alumnoToDelete.id}/`);
+            await axios.delete(`http://10.1.116.171:8000/api/alumnos/${alumnoToDelete.id}/`);
             
             // Muestra una alerta de éxito
             setDeleteAlert({ 

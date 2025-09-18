@@ -16,7 +16,7 @@ const Dashboard = () => {
     // Función para cargar los datos y calcular estadísticas
     const cargarEstadisticas = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/alumnos/');
+            const response = await axios.get('http://10.1.116.171:8000/api/alumnos/');
             const alumnos = response.data;
 
             // Calcular estadísticas

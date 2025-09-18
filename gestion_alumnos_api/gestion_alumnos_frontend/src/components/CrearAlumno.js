@@ -36,7 +36,7 @@ const CrearAlumno = () => {
         e.preventDefault(); // Previene el comportamiento por defecto del formulario
         try {
             // Envía los datos del formulario a la API
-            await axios.post('http://127.0.0.1:8000/api/alumnos/', alumno);
+            await axios.post('http://10.1.116.171:8000/api/alumnos/', alumno);
             // Muestra una alerta de éxito
             setShowAlert({ variant: 'success', message: 'Alumno creado exitosamente!' });
             // Redirige al usuario a la lista de alumnos después de 1.5 segundos
